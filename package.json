@@ -1,0 +1,30 @@
+{
+  "name": "product-recommendation-system",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "dev": "pnpm --parallel --filter @prs/api --filter @prs/web --filter @prs/admin dev",
+    "dev:api": "pnpm --filter @prs/api dev",
+    "dev:web": "pnpm --filter @prs/web dev",
+    "dev:admin": "pnpm --filter @prs/admin dev",
+    "db:generate": "pnpm --filter @prs/db prisma:generate",
+    "db:migrate": "pnpm --filter @prs/db prisma:migrate",
+    "db:seed": "pnpm --filter @prs/db seed",
+    "typecheck": "pnpm build:packages && pnpm -r --filter './apps/*' typecheck",
+    "build:packages": "pnpm --filter @prs/shared build && pnpm --filter @prs/config build && pnpm --filter @prs/ui build && pnpm --filter @prs/recommendation build && pnpm --filter @prs/db build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "build": "pnpm build:packages && pnpm -r --filter './apps/*' build",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.10.1",
+    "eslint": "^9.39.1",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vitest": "^4.0.14"
+  }
+}

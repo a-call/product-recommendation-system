@@ -1,0 +1,24 @@
+{
+  "name": "@prs/ui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src --ext .ts,.tsx",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "react": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  }
+}
